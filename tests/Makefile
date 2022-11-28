@@ -10,7 +10,7 @@ SRCS := $(filter-out catch_amalgamated.cpp, $(SRCS))
 TESTS := $(wildcard *.cpp)
 TESTS := $(filter-out catch_amalgamated.cpp, $(TESTS))
 HEADERS := $(wildcard *.h*)
-HEADERS := $(filter-out catch_amalgamated.hpp, $(HEADERS))
+HEADERS := $(filter-out catch_amalgamated.hpp, $(TESTS))
 
 main: $(TESTS) ../src/fac.cpp ../src/fac.h $(HEADERS)
 	$(CXX) $(CXXFLAGS) $(TESTS) ../src/fac.cpp catch_amalgamated -o "$@"
