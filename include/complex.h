@@ -30,47 +30,104 @@ class complex {
     //----------------------------------------- OPERATOR OVERLOADS -----------------------------------------------------
 	/**
      * Returns the difference of two complex numbers
-     * @param c1 the first complex addend
-     * @param c2 the second complex addend
-     * @return the sum of c1 and c2
+     * @param c the complex addend
+     * @return the sum of the complex number and c
      * @author ____________
      */
-    friend complex* operator+(complex c1, complex c2);
+    complex* operator+(complex c);
 
     /**
      * Returns the difference of two complex numbers
-     * @param c1 the complex minuend
-     * @param c2 the complex subtrahend
-     * @return the difference of c1 and c2
+     * @param c the complex subtrahend
+     * @return the difference of the complex number and c
      * @author ____________
      */
-    friend complex* operator-(complex c1, complex c2);
+    complex* operator-(complex c);
 
     /**
      * Returns the negative of the complex number
      * @return the negative of the complex number
      * @author ____________
      */
-    complex* operator-(complex c);
+    complex* operator-();
 
     /**
      * Returns the product of two complex numbers
-     * @param c1 the first complex factor
-     * @param c2 the second complex factor
-     * @return the product of c1 and c2
+     * @param c the second complex factor
+     * @return the product of the complex number and c
      * @author ____________
      */
-    friend complex* operator*(complex c1, complex c2);
+    complex* operator*(complex c);
 
     /**
      * Returns the quotient of two complex numbers
-     * @param c1 the complex dividend
-     * @param c2 the complex divisor
-     * @return the quotient of c1 and c2
+     * @param c the complex divisor
+     * @return the quotient of the complex number and c
      * @author ____________
      */
-    friend complex* operator/(complex c1, complex c2);
-  
+    complex* operator/(complex c);
+
+    /**
+     * Assigns a complex number
+     * @param c the complex number to assign
+     * @author ____________
+     */
+    void operator=(complex c);
+
+    /**
+     * Adds a complex number and assigns the result
+     * @param c the complex addend
+     * @author ____________
+     */
+    void operator+=(complex c);
+
+    /**
+     * Subtracts a complex number and assigns the result
+     * @param c the complex subtrahend
+     * @author ____________
+     */
+    void operator-=(complex c);
+
+    /**
+     * Multiplies a complex number and assigns the result
+     * @param c the complex factor
+     * @author ____________
+     */
+    void operator*=(complex c);
+    
+    /**
+     * Divides a complex number and assigns the result
+     * @param c the complex divisor
+     * @author ____________
+     */
+    void operator/=(complex c);
+
+    /**
+     * Checks for equality between two complex numbers
+     * @param c the complex number to compare
+     * @author ____________
+     */
+    bool operator==(complex c);
+
+    /**
+     * Extracts data from an input stream, where the data is of the form "(double real, double imag)" and stores result in a complex number.
+     * @param in the input stream to use for extraction
+     * @param c the complex number for data to be extracted to
+     * @return the input stream used
+     * @author ____________
+     */
+    friend istream& operator>>(istream& in, complex c);
+
+    /**
+     * Extracts data from a complex number in the form "(double real, double imag)" and stores result in an output stream
+     * @param out the output stream for data to be extracted to
+     * @param c the complex number to use for extraction
+     * @return the output stream used
+     * @author ____________
+     */
+    friend ostream& operator<<(istream& out, complex c);
+
+
   
   
   
@@ -112,7 +169,7 @@ class complex {
      * @return The complex number's conjugate
      * @author _________
      */
-    friend double conj(const complex);
+    friend complex* conj(const complex);
 	/**
      * Returns the square of the magnitude of its argument.
 		Faster than abs, but more likely to cause an overflow. For
@@ -132,7 +189,7 @@ class complex {
      *  @return The complex number with the specified magnitude and angle
      *  @author _________
      */
-    friend complex polar(double mag, double ang);
+    friend complex* polar(double mag, double ang);
 
 
 		//------------------------------------- MATH AND TRIGONOMETRIC LIBRARY FUNCTIONS -------------------------------------------
@@ -143,7 +200,7 @@ class complex {
      * @return the arccossine of the complex number
      * @author ____________
      */
-    friend complex acos(const complex);
+    friend complex* acos(const complex);
 
 	/**
      * Returns the angle whose sine is its argument.
@@ -151,7 +208,7 @@ class complex {
      * @return the arcsine of the complex number
      * @author ____________
      */
-    friend complex asin(const complex);
+    friend complex* asin(const complex);
 
 	/**
      * Returns the angle whose tangent is its argument.
@@ -159,7 +216,7 @@ class complex {
      * @return the arctangent of the complex number
      * @author ____________
      */
-    friend complex atan(const complex);
+    friend complex* atan(const complex);
 
 	/**
      * Returns the cosine of the argument.
@@ -167,7 +224,7 @@ class complex {
      * @return the cosine of the complex number
      * @author ____________
      */
-    friend complex cos(const complex);
+    friend complex* cos(const complex);
 
 	/**
      * Returns the hyperbolic cosine of the argument.
@@ -175,7 +232,7 @@ class complex {
      * @return the hyperbolic cosine of the complex number
      * @author ____________
      */
-    friend complex cosh(const complex);
+    friend complex* cosh(const complex);
 
 	/**
      * Computes e**x, where e is the base of the natural
@@ -184,7 +241,7 @@ class complex {
      * @return e to the power of the complex number
      * @author ____________
      */
-    friend complex exp(const complex);
+    friend complex* exp(const complex);
 
 	/**
      * Returns the natural logarithm of its argument.
