@@ -32,7 +32,7 @@ class complex {
      * Returns the difference of two complex numbers
      * @param c the complex addend
      * @return the sum of the complex number and c
-     * @author ____________
+     * @author Sameer Agrawal
      */
     complex* operator+(complex c);
 
@@ -40,14 +40,14 @@ class complex {
      * Returns the difference of two complex numbers
      * @param c the complex subtrahend
      * @return the difference of the complex number and c
-     * @author ____________
+     * @author Sameer Agrawal
      */
     complex* operator-(complex c);
 
     /**
      * Returns the negative of the complex number
      * @return the negative of the complex number
-     * @author ____________
+     * @author Sameer Agrawal
      */
     complex* operator-();
 
@@ -55,7 +55,7 @@ class complex {
      * Returns the product of two complex numbers
      * @param c the second complex factor
      * @return the product of the complex number and c
-     * @author ____________
+     * @author Sameer Agrawal
      */
     complex* operator*(complex c);
 
@@ -63,49 +63,49 @@ class complex {
      * Returns the quotient of two complex numbers
      * @param c the complex divisor
      * @return the quotient of the complex number and c
-     * @author ____________
+     * @author Sameer Agrawal
      */
     complex* operator/(complex c);
 
     /**
      * Assigns a complex number
      * @param c the complex number to assign
-     * @author ____________
+     * @author Max Vale
      */
     void operator=(complex c);
 
     /**
      * Adds a complex number and assigns the result
      * @param c the complex addend
-     * @author ____________
+     * @author Max Vale
      */
     void operator+=(complex c);
 
     /**
      * Subtracts a complex number and assigns the result
      * @param c the complex subtrahend
-     * @author ____________
+     * @author Max Vale
      */
     void operator-=(complex c);
 
     /**
      * Multiplies a complex number and assigns the result
      * @param c the complex factor
-     * @author ____________
+     * @author Max Vale
      */
     void operator*=(complex c);
     
     /**
      * Divides a complex number and assigns the result
      * @param c the complex divisor
-     * @author ____________
+     * @author Max Vale
      */
     void operator/=(complex c);
 
     /**
      * Checks for equality between two complex numbers
      * @param c the complex number to compare
-     * @author ____________
+     * @author Max Vale
      */
     bool operator==(complex c);
 
@@ -114,7 +114,7 @@ class complex {
      * @param in the input stream to use for extraction
      * @param c the complex number for data to be extracted to
      * @return the input stream used
-     * @author ____________
+     * @author Lance Moczygemba
      */
     friend istream& operator>>(istream& in, complex c);
 
@@ -123,7 +123,7 @@ class complex {
      * @param out the output stream for data to be extracted to
      * @param c the complex number to use for extraction
      * @return the output stream used
-     * @author ____________
+     * @author Lance Moczygemba
      */
     friend ostream& operator<<(istream& out, complex c);
 
