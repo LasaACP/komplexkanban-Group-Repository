@@ -17,36 +17,34 @@ Modified : Dec. 11th
 
 
 complex::complex() {
-  realPart = 0;
-  imaginaryPart = 0;
+  re = 0;
+  im = 0;
 }
   
 complex::complex(double real, double imaginary = 0.0) {
-  realPart = real;
-  imaginaryPart = imaginary;
+  re = real;
+  im = imaginary;
 }
 
-complex::complex()
-
-friend double real(complex c) {
-  return c.realPart;
+double real(complex c) {
+  return c.re;
 }
 
-friend double imag(complex c) {
-  return c.imaginaryPart;
+double imag(complex c) {
+  return c.im;
 }
 
-complex operator+ (complex c) {
-  complex output =  new complex();
-  output.realPart = realPart+c.realPart;
-  output.imaginaryPart = imaginaryPart+c.imaginaryPart;
+complex* operator+ (complex c) {
+  complex* output = new complex();
+  output->re = re+c.re;
+  output->im = im+c.im;
   return output;
 }
 
-complex operator- (complex c) {
-  complex output = Complex();
-  output.realPart = realPart - c.realPart;
-  output.imaginaryPart = imaginaryPart;
+complex* operator- (complex c) {
+  complex* output = new complex();
+  output->re = re - c.re;
+  output->im = im;
   return output;
 }
 
@@ -57,8 +55,14 @@ complex operator* (complex c) {
   return output;
 }
 
-complex operator/ (complex c){
-  
+complex::friend complex operator/ (complex c) {
+  complex output = complex();
+  complex numerator = complex(realPart, imaginaryPart);
+  numerator = numerator*c.conj(c);
+  complex denominator = c*c.conj(c);
+  output.realPart = numerator.realPart/denominator;
+  output.imaginaryPart = numerator.imaginaryPart/denominator;
+  return output;
 }
 
 
