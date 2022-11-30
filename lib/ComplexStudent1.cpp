@@ -10,38 +10,61 @@ Modified : Dec. 11th
 */
 
 #include <cmath>
-#include "Complex.h"
+#include "../include/complex.h"
 
 #define PI 3.1415926538979323846
 #define EULER 2.71828182845904523536
 
-Complex::Complex() 
-{
-  double realPart;
-  double imaginaryPart;
 
-  Complex() {
-    realPart = 0;
-    imaginaryPart = 0;
-  }
+complex::complex() {
+  realPart = 0;
+  imaginaryPart = 0;
+}
   
-  Complex(double real, double imaginary = 0.0) {
-    realPart = real;
-    imaginaryPart = imaginary;
-  }
+complex::complex(double real, double imaginary = 0.0) {
+  realPart = real;
+  imaginaryPart = imaginary;
+}
 
-  friend double real(Complex c) {
-    return c.realPart;
-  }
+complex::complex()
 
-  friend double imag(Complex c) {
-    return c.imaginaryPart;
-  }
+friend double real(complex c) {
+  return c.realPart;
+}
 
-  Complex operator+ (Complex c) {
-    return c
-  }
+friend double imag(complex c) {
+  return c.imaginaryPart;
+}
+
+complex operator+ (complex c) {
+  complex output =  new complex();
+  output.realPart = realPart+c.realPart;
+  output.imaginaryPart = imaginaryPart+c.imaginaryPart;
+  return output;
+}
+
+complex operator- (complex c) {
+  complex output = Complex();
+  output.realPart = realPart - c.realPart;
+  output.imaginaryPart = imaginaryPart;
+  return output;
+}
+
+complex operator* (complex c) {
+  complex output = complex();
+  output.realPart = realPart*c.realPart + imaginaryPart*c.imaginaryPart * -1;
+  output.imaginaryPart = realPart*c.imaginaryPart + imaginaryPart + c.realPart;
+  return output;
+}
+
+complex operator/ (complex c){
   
+}
+
+
+
+
+
 }
 
 // - - - - - Other Functions Follow - - - - - - - - - - - -
