@@ -29,16 +29,47 @@ class complex {
 
     //----------------------------------------- OPERATOR OVERLOADS -----------------------------------------------------
 	/**
-     * Returns the absolute value (sqrt(a^2+b^2)) of com
-     * @param com the complex number to find the absolute value of
-     * @return the absolute value of com
+     * Returns the difference of two complex numbers
+     * @param c1 the first complex addend
+     * @param c2 the second complex addend
+     * @return the sum of c1 and c2
      * @author ____________
      */
-    friend double abs(const complex);
-    friend complex* operator+(complex c);
-    friend complex* operator-(complex c);
-    friend complex* operator(complex c);
-    friend complex* operator+(complex c);
+    friend complex* operator+(complex c1, complex c2);
+
+    /**
+     * Returns the difference of two complex numbers
+     * @param c1 the complex minuend
+     * @param c2 the complex subtrahend
+     * @return the difference of c1 and c2
+     * @author ____________
+     */
+    friend complex* operator-(complex c1, complex c2);
+
+    /**
+     * Returns the negative of the complex number
+     * @return the negative of the complex number
+     * @author ____________
+     */
+    complex* operator-(complex c);
+
+    /**
+     * Returns the product of two complex numbers
+     * @param c1 the first complex factor
+     * @param c2 the second complex factor
+     * @return the product of c1 and c2
+     * @author ____________
+     */
+    friend complex* operator*(complex c1, complex c2);
+
+    /**
+     * Returns the quotient of two complex numbers
+     * @param c1 the complex dividend
+     * @param c2 the complex divisor
+     * @return the quotient of c1 and c2
+     * @author ____________
+     */
+    friend complex* operator/(complex c1, complex c2);
   
   
   
