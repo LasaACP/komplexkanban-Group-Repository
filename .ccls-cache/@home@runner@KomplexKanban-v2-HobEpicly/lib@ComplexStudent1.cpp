@@ -44,7 +44,7 @@ complex* operator+ (complex c) {
 complex* operator- (complex c) {
   complex* output = new complex();
   output->re = re - c.re;
-  output->im = imaginaryPart;
+  output->im = im;
   return output;
 }
 
