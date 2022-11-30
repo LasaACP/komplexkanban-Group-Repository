@@ -26,36 +26,36 @@ complex::complex(double real, double imaginary = 0.0) {
   im = imaginary;
 }
 
-double real(complex c) {
+double complex::real(const complex c) {
   return c.re;
 }
 
-double imag(complex c) {
+double complex::imag(complex c) {
   return c.im;
 }
 
-complex* operator+ (complex c) {
+complex* complex::operator+ (complex c) {
   complex* output = new complex();
   output->re = re+c.re;
   output->im = im+c.im;
   return output;
 }
 
-complex* operator- (complex c) {
+complex* complex::operator- (complex c1, complex c2) {
   complex* output = new complex();
   output->re = re - c.re;
-  output->im = imaginaryPart;
+  output->im = im;
   return output;
 }
 
-complex operator* (complex c) {
+complex* operator* (complex c) {
   complex output = complex();
-  output.realPart = realPart*c.realPart + imaginaryPart*c.imaginaryPart * -1;
+  output.re = this.re*c.re + im*c.im * -1;
   output.imaginaryPart = realPart*c.imaginaryPart + imaginaryPart + c.realPart;
   return output;
 }
 
-complex::friend complex operator/ (complex c) {
+complex::complex operator/ (complex c) {
   complex output = complex();
   complex numerator = complex(realPart, imaginaryPart);
   numerator = numerator*c.conj(c);
