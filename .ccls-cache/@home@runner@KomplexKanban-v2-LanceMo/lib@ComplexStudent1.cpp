@@ -76,7 +76,8 @@ complex::friend ostream& operator<< (ostream& ostr, const complex& output){
 }
 
 complex::friend istream& operator>> (istream& istr, const complex& input) {
-  string test = istr;
+  string test = "";
+  istr >> test;
   int stop = test.find(",");
   if (stop != -1) {
     // get first number (real) as str
@@ -96,7 +97,7 @@ complex::friend istream& operator>> (istream& istr, const complex& input) {
     double real = stod(first);
     double imag = stod(second);
     complex out (real, imag);
-    return out;
+    return istr;
   }
   else {
     string real = "";
@@ -107,12 +108,12 @@ complex::friend istream& operator>> (istream& istr, const complex& input) {
     }
     if (real != "") {
       double real_doub = stod(real);
-      complex outC2 (real_doub, 0);
-      return outC2;
+      complex out (real_doub, 0);
+      return istr;
     }
     else {
-      complex outC3 (0, 0);
-      return outC3;
+      complex out (0, 0);
+      return istr;
     }
   }
 
