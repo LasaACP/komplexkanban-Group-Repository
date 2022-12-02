@@ -52,7 +52,7 @@ class complex {
      * @return the sum of the complex and real numbers
      * @author Sameer Agrawal
      */
-    friend complex operator+(complex c, double r);
+    complex operator+(double r);
 
     /**
      * Returns the difference of two complex numbers
@@ -78,7 +78,7 @@ class complex {
      * @return the difference of the complex and real numbers
      * @author Sameer Agrawal
      */
-    friend complex operator-(complex c, double r);
+    complex operator-(double r);
 
     /**
      * Returns the negative of the complex number
@@ -111,7 +111,7 @@ class complex {
      * @return the product of the complex and real numbers
      * @author Sameer Agrawal
      */
-    friend complex operator*(complex c, double r);
+    complex operator*(double r);
 
     /**
      * Returns the quotient of two complex numbers
@@ -137,7 +137,7 @@ class complex {
      * @return the quotient of the complex and real numbers
      * @author Sameer Agrawal
      */
-    friend complex operator/(complex c, double r);
+    complex operator/(double r);
 
     /**
      * Assigns a complex number
