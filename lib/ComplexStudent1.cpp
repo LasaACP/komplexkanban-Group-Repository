@@ -97,6 +97,7 @@ complex::friend istream& operator>> (istream& istr, const complex& input) {
     double real = stod(first);
     double imag = stod(second);
     complex out (real, imag);
+    input = out;
     return istr;
   }
   else {
@@ -109,10 +110,12 @@ complex::friend istream& operator>> (istream& istr, const complex& input) {
     if (real != "") {
       double real_doub = stod(real);
       complex out (real_doub, 0);
+      input = out;
       return istr;
     }
     else {
       complex out (0, 0);
+      input = out;
       return istr;
     }
   }
