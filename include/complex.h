@@ -47,12 +47,11 @@ class complex {
 
     /**
      * Returns the sum of a complex number and an integer
-     * @param c the complex addend
      * @param r the real addend
      * @return the sum of the complex and real numbers
      * @author Sameer Agrawal
      */
-    friend complex operator+(complex c, double r);
+    complex operator+(double r);
 
     /**
      * Returns the difference of two complex numbers
@@ -73,12 +72,11 @@ class complex {
 
     /**
      * Returns the difference of a complex number and an integer
-     * @param c the complex subtrahend
      * @param r the real minuend
      * @return the difference of the complex and real numbers
      * @author Sameer Agrawal
      */
-    friend complex operator-(complex c, double r);
+    complex operator-(double r);
 
     /**
      * Returns the negative of the complex number
@@ -106,12 +104,11 @@ class complex {
 
     /**
      * Returns the product of a complex number and an integer
-     * @param c the complex factor
      * @param r the real factor
      * @return the product of the complex and real numbers
      * @author Sameer Agrawal
      */
-    friend complex operator*(complex c, double r);
+    complex operator*(double r);
 
     /**
      * Returns the quotient of two complex numbers
@@ -132,12 +129,11 @@ class complex {
 
     /**
      * Returns the quotient of a complex number and an integer
-     * @param c the complex dividend
      * @param r the real divisor
      * @return the quotient of the complex and real numbers
      * @author Sameer Agrawal
      */
-    friend complex operator/(complex c, double r);
+    complex operator/(double r);
 
     /**
      * Assigns a complex number
@@ -184,12 +180,11 @@ class complex {
 
     /**
      * Checks for equality between a complex number and a real number
-     * @param c the complex number to compare
      * @param r the real number to compare
      * @return the equality of the numbers as a boolean
      * @author Max Vale
      */
-    friend bool operator==(complex c, double r);
+    bool operator==(double r);
 
     /**
      * Checks for equality between a real number and a complex number
