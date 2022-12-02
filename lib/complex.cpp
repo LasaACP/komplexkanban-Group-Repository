@@ -26,49 +26,55 @@ complex::complex(double real, double imaginary = 0.0) {
   im = imaginary;
 }
 
-double real(complex c) {
+double complex::real(const complex c) {
   return c.re;
 }
 
-double imag(complex c) {
+double complex::imag(complex c) {
   return c.im;
 }
 
-complex* operator+ (complex c) {
+complex complex::conj(complex c) {
+  complex output = complex(c.re, c.im);
+  output.im = (-1)*c.im;
+  return output;
+}
+
+void complex::operator=(complex c) {
+  re = c.re;
+  im = c.im;
+}
+
+complex* complex::operator+ (complex c) {
   complex* output = new complex();
   output->re = re+c.re;
   output->im = im+c.im;
   return output;
 }
 
-complex* operator- (complex c) {
+complex* complex::operator- (complex c) {
   complex* output = new complex();
   output->re = re - c.re;
   output->im = im;
   return output;
 }
 
-complex operator* (complex c) {
-  complex output = complex();
-  output.realPart = realPart*c.realPart + imaginaryPart*c.imaginaryPart * -1;
-  output.imaginaryPart = realPart*c.imaginaryPart + imaginaryPart + c.realPart;
+complex* complex::operator* (complex c) {
+  complex* output = new complex();
+  output->re = re*c.re + im*c.im * -1;
+  output->im = re*c.im + im + c.re;
   return output;
 }
 
-complex::friend complex operator/ (complex c) {
-  complex output = complex();
-  complex numerator = complex(realPart, imaginaryPart);
-  numerator = numerator*c.conj(c);
-  complex denominator = c*c.conj(c);
-  output.realPart = numerator.realPart/denominator;
-  output.imaginaryPart = numerator.imaginaryPart/denominator;
+complex* complex::operator/ (complex c) {
+  complex* output = new complex();
+  complex* numerator = new complex(re, im);
+  complex* denominator = new complex(c.re, c.im);
+  c = c.conj(c);
+  numerator = *numerator * c;
+  float den = (*denominator * c)->re;
+  output->re = numerator->re/den;
+  output->im = numerator->im/den;
   return output;
 }
-
-
-
-
-
-}
-
 // - - - - - Other Functions Follow - - - - - - - - - - - -

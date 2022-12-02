@@ -35,13 +35,14 @@ class complex {
      * @author ____________
      */
     friend double abs(const complex);
-    friend complex* operator+(complex c);
-    friend complex* operator-(complex c);
-    friend complex* operator(complex c);
-    friend complex* operator+(complex c);
+    void operator=(complex c);
+    complex* operator+(complex c);
+    complex* operator-(complex c);
+    complex* operator*(complex c);
+    complex* operator/(complex c);
   
   
-  
+    
   
   
       //------------------------------------- ARITHMETIC LIBRARY FUNCTIONS -------------------------------------------
@@ -59,14 +60,14 @@ class complex {
      * @return complex.real
      * @author ___________
      */
-    friend double real(const complex);
+    double real(const complex);
     /**
      * Returns the imaginary part of complex number
      * @param com The complex number to find the real part of
      * @return complex.imaginary
      * @author _________
      */
-    friend double imag(const complex);
+    double imag(const complex);
 	/**
      * Returns the angle of a complex number.
      * @param com The complex number to find the angle of
@@ -81,7 +82,7 @@ class complex {
      * @return The complex number's conjugate
      * @author _________
      */
-    friend double conj(const complex);
+    complex* conj(const complex);
 	/**
      * Returns the square of the magnitude of its argument.
 		Faster than abs, but more likely to cause an overflow. For
