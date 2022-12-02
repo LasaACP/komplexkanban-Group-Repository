@@ -1,11 +1,11 @@
 /*
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Title : Complex______.cpp
-Author : _______
+Title : ComplexStudent1.cpp
+Author : Sameer Agrawal
 URL : NA
-Description : The implementation for Complex.h that was written by 
+Description : The implementation for Complex.h that was written by Sameer Agrawal
 Created : Nov. 28th
-Modified : Dec. 11th
+Last Modified : Dec. 11th
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 */
 
@@ -45,36 +45,84 @@ void complex::operator=(complex c) {
   im = c.im;
 }
 
-complex* complex::operator+ (complex c) {
-  complex* output = new complex();
-  output->re = re+c.re;
-  output->im = im+c.im;
+complex complex::operator+ (complex c) {
+  complex output = complex();
+  output.re = re+c.re;
+  output.im = im+c.im;
   return output;
 }
 
-complex* complex::operator- (complex c) {
-  complex* output = new complex();
-  output->re = re - c.re;
-  output->im = im;
+complex complex::operator- (complex c) {
+  complex output = complex();
+  output.re = re - c.re;
+  output.im = im;
   return output;
 }
 
-complex* complex::operator* (complex c) {
-  complex* output = new complex();
-  output->re = re*c.re + im*c.im * -1;
-  output->im = re*c.im + im + c.re;
+complex complex::operator* (complex c) {
+  complex output = complex();
+  output.re = re*c.re + im*c.im * -1;
+  output.im = re*c.im + im + c.re;
   return output;
 }
 
-complex* complex::operator/ (complex c) {
-  complex* output = new complex();
-  complex* numerator = new complex(re, im);
-  complex* denominator = new complex(c.re, c.im);
+complex complex::operator/ (complex c) {
+  complex output = complex();
+  complex numerator = complex(re, im);
+  complex denominator = complex(c.re, c.im);
   c = c.conj(c);
-  numerator = *numerator * c;
-  float den = (*denominator * c)->re;
-  output->re = numerator->re/den;
-  output->im = numerator->im/den;
+  numerator = numerator * c;
+  float den = (denominator * c).re;
+  output.re = numerator.re/den;
+  output.im = numerator.im/den;
   return output;
 }
+
+complex complex::operator+ (double c) {
+  complex* input2 = new complex(c);
+  return *this + *input2;
+}
+
+complex complex::operator- (double c) {
+  complex* input2 = new complex(c);
+  return *this - *input2;
+}
+
+complex complex::operator* (double c) {
+  complex* input2 = new complex(c);
+  return *this * *input2;
+}
+
+complex complex::operator/ (double c) {
+  complex* input2 = new complex(c);
+  return *this / *input2;
+}
+
+complex operator+ (double c, complex d) {
+  complex* input2 = new complex(c);
+  return d + *input2;
+}
+
+complex operator- (double c, complex d) {
+  complex* input2 = new complex(c);
+  return d - *input2;
+}
+
+complex operator* (double c, complex d) {
+  complex* input2 = new complex(c);
+  return d * *input2;
+}
+
+complex operator/ (double c, complex d) {
+  complex* input2 = new complex(c);
+  return d / *input2;
+}
+
+complex complex::operator- () {
+  complex* output = new complex(re, im);
+  output->re = -re;
+  output->im = -im;
+  return *output;
+}
+
 // - - - - - Other Functions Follow - - - - - - - - - - - -
