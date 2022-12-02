@@ -98,40 +98,31 @@ complex complex::operator/ (double c) {
   return *this / *input2;
 }
 
-complex complex::operator+ (double c, complex d) {
+complex operator+ (double c, complex d) {
   complex* input2 = new complex(c);
   return d + *input2;
 }
 
-complex complex::operator- (double c, complex d) {
+complex operator- (double c, complex d) {
   complex* input2 = new complex(c);
   return d - *input2;
 }
 
-complex complex::operator* (double c, complex d) {
+complex operator* (double c, complex d) {
   complex* input2 = new complex(c);
   return d * *input2;
 }
 
-complex complex::operator/ (double c, complex d) {
+complex operator/ (double c, complex d) {
   complex* input2 = new complex(c);
   return d / *input2;
 }
 
 complex complex::operator- () {
-  complex* output = new complex(d.re, d.im);
-  output.re = -re;
-  output.im = -im;
+  complex* output = new complex(re, im);
+  output->re = -re;
+  output->im = -im;
   return *output;
-}
-
-string complex::toString() {
-  string output = "";
-  output += to_string(re);
-  output += " + ";
-  output += to_string(im);
-  output += "i";
-  return output;
 }
 
 // - - - - - Other Functions Follow - - - - - - - - - - - -
