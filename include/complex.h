@@ -13,7 +13,6 @@ Modified : 11/28/2022
 #define COMPLASA_H
 
 #include <iostream>
-//#include <complex>
 
 using namespace std;
 
@@ -29,20 +28,199 @@ class complex {
 
     //----------------------------------------- OPERATOR OVERLOADS -----------------------------------------------------
 	/**
-     * Returns the absolute value (sqrt(a^2+b^2)) of com
-     * @param com the complex number to find the absolute value of
-     * @return the absolute value of com
-     * @author ____________
+     * Returns the sum of two complex numbers
+     * @param c the complex addend
+     * @return the sum of the complex number and c
+     * @author Sameer Agrawal
      */
-    friend double abs(const complex);
-    friend complex* operator+(complex c);
-    friend complex* operator-(complex c);
-    friend complex* operator(complex c);
-    friend complex* operator+(complex c);
-    friend ostream& operator<<(ostream&, const complex&);
-    friend istream& operator>>(istream&, complex&);
-  
-  
+    complex operator+(complex c);
+
+    /**
+     * Returns the sum of a complex number and an integer
+     * @param r the real addend
+     * @param c the complex addend
+     * @return the sum of the real and complex numbers
+     * @author Sameer Agrawal
+     */
+    friend complex operator+(double r, complex c);
+
+    /**
+     * Returns the sum of a complex number and an integer
+     * @param r the real addend
+     * @return the sum of the complex and real numbers
+     * @author Sameer Agrawal
+     */
+    complex operator+(double r);
+
+    /**
+     * Returns the difference of two complex numbers
+     * @param c the complex subtrahend
+     * @return the difference of the complex number and c
+     * @author Sameer Agrawal
+     */
+    complex operator-(complex c);
+
+    /**
+     * Returns the difference of an integer and a complex number
+     * @param r the real minuend
+     * @param c the complex subtrahend
+     * @return the difference of the real and complex numbers
+     * @author Sameer Agrawal
+     */
+    friend complex operator-(double r, complex c);
+
+    /**
+     * Returns the difference of a complex number and an integer
+     * @param r the real minuend
+     * @return the difference of the complex and real numbers
+     * @author Sameer Agrawal
+     */
+    complex operator-(double r);
+
+    /**
+     * Returns the negative of the complex number
+     * @return the negative of the complex number
+     * @author Sameer Agrawal
+     */
+    complex operator-();
+
+    /**
+     * Returns the product of two complex numbers
+     * @param c the second complex factor
+     * @return the product of the complex number and c
+     * @author Sameer Agrawal
+     */
+    complex operator*(complex c);
+
+    /**
+     * Returns the product of an integer and a complex number
+     * @param r the real factor
+     * @param c the complex factor
+     * @return the product of the real and complex numbers
+     * @author Sameer Agrawal
+     */
+    friend complex operator*(double r, complex c);
+
+    /**
+     * Returns the product of a complex number and an integer
+     * @param r the real factor
+     * @return the product of the complex and real numbers
+     * @author Sameer Agrawal
+     */
+    complex operator*(double r);
+
+    /**
+     * Returns the quotient of two complex numbers
+     * @param c the complex divisor
+     * @return the quotient of the complex number and c
+     * @author Sameer Agrawal
+     */
+    complex operator/(complex c);
+
+    /**
+     * Returns the quotient of an integer and a complex number
+     * @param r the real dividend
+     * @param c the complex divisor
+     * @return the quotient of the real and complex numbers
+     * @author Sameer Agrawal
+     */
+    friend complex operator/(double r, complex c);
+
+    /**
+     * Returns the quotient of a complex number and an integer
+     * @param r the real divisor
+     * @return the quotient of the complex and real numbers
+     * @author Sameer Agrawal
+     */
+    complex operator/(double r);
+
+    /**
+     * Assigns a complex number
+     * @param c the complex number to assign
+     * @author Max Vale
+     */
+    void operator=(complex c);
+
+    /**
+     * Adds a complex number and assigns the result
+     * @param c the complex addend
+     * @author Max Vale
+     */
+    void operator+=(complex c);
+
+    /**
+     * Subtracts a complex number and assigns the result
+     * @param c the complex subtrahend
+     * @author Max Vale
+     */
+    void operator-=(complex c);
+
+    /**
+     * Multiplies a complex number and assigns the result
+     * @param c the complex factor
+     * @author Max Vale
+     */
+    void operator*=(complex c);
+    
+    /**
+     * Divides a complex number and assigns the result
+     * @param c the complex divisor
+     * @author Max Vale
+     */
+    void operator/=(complex c);
+
+    /**
+     * Checks for equality between two complex numbers
+     * @param c the complex number to compare
+     * @return the equality of the numbers as a boolean
+     * @author Max Vale
+     */
+    bool operator==(complex c);
+
+    /**
+     * Checks for equality between a complex number and a real number
+     * @param r the real number to compare
+     * @return the equality of the numbers as a boolean
+     * @author Max Vale
+     */
+    bool operator==(double r);
+
+    /**
+     * Checks for equality between a real number and a complex number
+     * @param r the real number to compare
+     * @param c the complex number to compare
+     * @return the equality of the numbers as a boolean
+     * @author Max Vale
+     */
+    friend bool operator==(double r, complex c);
+
+    /**
+     * Extracts data from an input stream, where the data is of the form "(double real, double imag)" and stores result in a complex number.
+     * @param in the input stream to use for extraction
+     * @param c the complex number for data to be extracted to
+     * @return the input stream used
+     * @author Lance Moczygemba
+     */
+    friend istream& operator>>(istream& in, complex c);
+
+    /**
+     * Receives user input and stores it in param c
+     * @param in the input stream for input to be extracted from
+     * @param c the complex number in which input will be deposited
+     * @return input stream used
+     * @author Lance Moczygemba
+     */
+    
+    friend ostream& operator<<(istream& out, complex c);
+
+    /**
+     * Extracts data from a complex number in the form "(double real, double imag)" and stores result in an output stream
+     * @param out the output stream for data to be extracted to
+     * @param c the complex number to use for extraction
+     * @return the output stream used
+     * @author Lance Moczygemba
+     */
+    
   
   
       //------------------------------------- ARITHMETIC LIBRARY FUNCTIONS -------------------------------------------
@@ -60,21 +238,21 @@ class complex {
      * @return complex.real
      * @author ___________
      */
-    friend double real(const complex);
+    double real(const complex);
     /**
      * Returns the imaginary part of complex number
      * @param com The complex number to find the real part of
      * @return complex.imaginary
      * @author _________
      */
-    friend double imag(const complex);
+    double imag(const complex);
 	/**
      * Returns the angle of a complex number.
      * @param com The complex number to find the angle of
      * @return The complex number's angle
      * @author _________
      */
-    friend double ang(const complex);
+    friend double arg(const complex);
 
 	/**
      * Returns the complex conjugate of its argument.
@@ -82,7 +260,8 @@ class complex {
      * @return The complex number's conjugate
      * @author _________
      */
-    friend double conj(const complex);
+    complex conj(const complex);
+    
 	/**
      * Returns the square of the magnitude of its argument.
 		Faster than abs, but more likely to cause an overflow. For
