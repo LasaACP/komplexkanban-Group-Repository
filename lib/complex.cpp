@@ -20,7 +20,7 @@ complex::complex() {
   re = 0;
   im = 0;
 }
-  
+
 complex::complex(double real, double imaginary = 0.0) {
   re = real;
   im = imaginary;
@@ -124,5 +124,64 @@ complex complex::operator- () {
   output->im = -im;
   return *output;
 }
+
+
+
+complex complex::ostream& operator<< (ostream& ostr, const complex& output){
+   ostr << "(";
+   ostr << output.re;
+   ostr << ", ";
+   ostr << output.im;
+   ostr << ")";
+   return ostr;
+}
+
+complex complex::istream& operator>> (istream& istr, const complex& input) {
+  string test = "";
+  istr >> test;
+  int stop = test.find(",");
+  if (stop != -1) {
+    // get first number (real) as str
+    string first = "";
+    for (int i = 0; i < stop; i++) {
+      if (isdigit(test[i]) || test[i] == '.') {
+        first += test[i];
+      }
+    }
+    //get second number (imaginary) as str
+    string second = "";
+    for (int x = stop; x < test.length(); x++) {
+      if (isdigit(test[x]) || test[x] == '.') {
+        second += test[x];
+      }
+    }
+    double real = stod(first);
+    double imag = stod(second);
+    complex out (real, imag);
+    input = out;
+    return istr;
+  }
+  else {
+    string real = "";
+    for (int z = 0; z < test.length(); z++) {
+      if (isdigit(test[z]) || test[x] == '.') {
+        real += test[z];
+      }
+    }
+    if (real != "") {
+      double real_doub = stod(real);
+      complex out (real_doub, 0);
+      input = out;
+      return istr;
+    }
+    else {
+      complex out (0, 0);
+      input = out;
+      return istr;
+    }
+  }
+
+}
+
 
 // - - - - - Other Functions Follow - - - - - - - - - - - -
