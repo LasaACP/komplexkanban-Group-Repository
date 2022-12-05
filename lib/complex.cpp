@@ -45,6 +45,32 @@ void complex::operator=(complex c) {
   im = c.im;
 }
 
+bool complex::operator==(complex c) {
+  return ((re == c.re) && (im == c.im));
+} 
+
+bool complex::operator==(double c) {
+  complex* e = new complex(c);
+  return ((re == e->re) && (im == e->im));
+} 
+
+bool operator==(double c, complex d) {
+  complex* e = new complex(c);
+  return ((d.re == e->re) && (d.im == e->im));
+}
+
+bool complex::operator!=(complex c) {
+  return !((*this == c));
+} 
+
+bool complex::operator!=(double c) {
+  return !(*this == c);
+} 
+
+bool operator!=(double c, complex d) {
+  return !(c == d);
+}
+
 complex complex::operator+ (complex c) {
   complex output = complex();
   output.re = re+c.re;
@@ -124,8 +150,6 @@ complex complex::operator- () {
   output->im = -im;
   return *output;
 }
-
-
 
 complex complex::ostream& operator<< (ostream& ostr, const complex& output){
    ostr << "(";
