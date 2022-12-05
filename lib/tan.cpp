@@ -1,7 +1,7 @@
 #include <cmath>
 #include "../include/complex.h"
 
-complex tan(const complex c)
+complex tan(const complex com)
 {
-    return sin(c)/cos(c);
+    return sin(com)/cos(com);
 }

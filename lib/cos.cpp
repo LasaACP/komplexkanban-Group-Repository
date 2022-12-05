@@ -1,9 +1,9 @@
 #include <cmath>
 #include "../include/complex.h"
 
-complex cos(const complex c)
+complex cos(const complex com)
 {
-    double a = std::cos(c.re) * std::cosh(c.im);
-    double b = -1 * std::sin(c.re) * std::sinh(c.im);
+    double a = std::cos(com.re) * std::cosh(com.im);
+    double b = -1 * std::sin(com.re) * std::sinh(com.im);
     return complex(a,b);
 }
