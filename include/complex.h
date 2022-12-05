@@ -13,7 +13,6 @@ Modified : 11/28/2022
 #define COMPLASA_H
 
 #include <iostream>
-//#include <complex>
 
 using namespace std;
 
@@ -47,7 +46,10 @@ class complex {
 
     /**
      * Returns the sum of a complex number and an integer
+<<<<<<< HEAD
      * @param c the complex addend
+=======
+>>>>>>> origin/main
      * @param r the real addend
      * @return the sum of the complex and real numbers
      * @author Sameer Agrawal
@@ -73,7 +75,10 @@ class complex {
 
     /**
      * Returns the difference of a complex number and an integer
+<<<<<<< HEAD
      * @param c the complex subtrahend
+=======
+>>>>>>> origin/main
      * @param r the real minuend
      * @return the difference of the complex and real numbers
      * @author Sameer Agrawal
@@ -106,7 +111,10 @@ class complex {
 
     /**
      * Returns the product of a complex number and an integer
+<<<<<<< HEAD
      * @param c the complex factor
+=======
+>>>>>>> origin/main
      * @param r the real factor
      * @return the product of the complex and real numbers
      * @author Sameer Agrawal
@@ -132,7 +140,10 @@ class complex {
 
     /**
      * Returns the quotient of a complex number and an integer
+<<<<<<< HEAD
      * @param c the complex dividend
+=======
+>>>>>>> origin/main
      * @param r the real divisor
      * @return the quotient of the complex and real numbers
      * @author Sameer Agrawal
@@ -178,29 +189,73 @@ class complex {
      * Checks for equality between two complex numbers
      * @param c the complex number to compare
      * @return the equality of the numbers as a boolean
+<<<<<<< HEAD
      * @author Max Vale
+=======
+     * @author Sameer Agrawal
+>>>>>>> origin/main
      */
     bool operator==(complex c);
 
     /**
      * Checks for equality between a complex number and a real number
+<<<<<<< HEAD
      * @param c the complex number to compare
      * @param r the real number to compare
      * @return the equality of the numbers as a boolean
      * @author Max Vale
      */
     friend bool operator==(complex c, double r);
+=======
+     * @param r the real number to compare
+     * @return the equality of the numbers as a boolean
+     * @author Sameer Agrawal
+     */
+    bool operator==(double r);
+>>>>>>> origin/main
 
     /**
      * Checks for equality between a real number and a complex number
      * @param r the real number to compare
      * @param c the complex number to compare
      * @return the equality of the numbers as a boolean
+<<<<<<< HEAD
      * @author Max Vale
+=======
+     * @author Sameer Agrawal
+>>>>>>> origin/main
      */
     friend bool operator==(double r, complex c);
 
     /**
+<<<<<<< HEAD
+=======
+     * Checks for inequality between two complex numbers
+     * @param c the complex number to compare
+     * @return the equality of the numbers as a boolean
+     * @author Sameer Agrawal
+     */
+    bool operator!=(complex c);
+
+    /**
+     * Checks for inequality between a complex number and a real number
+     * @param r the real number to compare
+     * @return the equality of the numbers as a boolean
+     * @author Sameer Agrawal
+     */
+    bool operator!=(double r);
+
+    /**
+     * Checks for inequality between a real number and a complex number
+     * @param r the real number to compare
+     * @param c the complex number to compare
+     * @return the equality of the numbers as a boolean
+     * @author Sameer Agrawal
+     */
+    friend bool operator!=(double r, complex c);
+
+    /**
+>>>>>>> origin/main
      * Extracts data from an input stream, where the data is of the form "(double real, double imag)" and stores result in a complex number.
      * @param in the input stream to use for extraction
      * @param c the complex number for data to be extracted to
@@ -210,15 +265,33 @@ class complex {
     friend istream& operator>>(istream& in, complex c);
 
     /**
+<<<<<<< HEAD
+=======
+
+     * Receives user input and stores it in param c
+     * @param in the input stream for input to be extracted from
+     * @param c the complex number in which input will be deposited
+     * @return input stream used
+     * @author Lance Moczygemba
+     */
+    
+    friend ostream& operator<<(istream& out, complex c);
+
+    /**
+>>>>>>> origin/main
      * Extracts data from a complex number in the form "(double real, double imag)" and stores result in an output stream
      * @param out the output stream for data to be extracted to
      * @param c the complex number to use for extraction
      * @return the output stream used
      * @author Lance Moczygemba
      */
+<<<<<<< HEAD
     friend ostream& operator<<(istream& out, complex c);
   
     
+=======
+
+>>>>>>> origin/main
   
   
       //------------------------------------- ARITHMETIC LIBRARY FUNCTIONS -------------------------------------------
