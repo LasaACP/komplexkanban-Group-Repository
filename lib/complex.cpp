@@ -126,6 +126,7 @@ complex complex::operator- () {
 }
 
 
+
 complex complex::ostream& operator<< (ostream& ostr, const complex& output){
    ostr << "(";
    ostr << output.re;
@@ -181,10 +182,6 @@ complex complex::istream& operator>> (istream& istr, const complex& input) {
   }
 
 }
-
-
-
-
 
 
 // - - - - - Other Functions Follow - - - - - - - - - - - -

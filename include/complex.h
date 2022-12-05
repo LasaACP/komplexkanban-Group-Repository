@@ -204,6 +204,7 @@ class complex {
     friend istream& operator>>(istream& in, complex c);
 
     /**
+
      * Receives user input and stores it in param c
      * @param in the input stream for input to be extracted from
      * @param c the complex number in which input will be deposited
@@ -220,7 +221,7 @@ class complex {
      * @return the output stream used
      * @author Lance Moczygemba
      */
-    
+
   
   
       //------------------------------------- ARITHMETIC LIBRARY FUNCTIONS -------------------------------------------
