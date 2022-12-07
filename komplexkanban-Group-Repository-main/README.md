@@ -1,2 +1,0 @@
-# CompLASAlib-template
-Hello
