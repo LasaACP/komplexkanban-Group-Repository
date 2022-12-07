@@ -1,6 +1,6 @@
 #include <cstdlib>
 #include <iostream>
-#include "Complex.h"
+#include "../include/complex.h"
 #include "fac.h"
 
 #define PI 3.1415926538979323846
@@ -11,7 +11,7 @@ int main () {
 
     std::cout << "Factorial test " << Factorial(5) << std::endl;
   
-    Complex a(5.0,6.0),b;
+    complex a(5.0,6.0),b;
 
     std::cout << "Enter b: ";
     std::cin >> b;
@@ -28,9 +28,9 @@ int main () {
     std::cout << "abs of a = " << abs(a) << "\n";
     std::cout << "exp(a) = " << exp(a) << "\n";
 
-    Complex j = Complex(0.0,1.0);
-    Complex z1 = 1+2*j;
-    Complex z2 = 2+3*j;
+    complex j = complex(0.0,1.0);
+    complex z1 = 1+2*j;
+    complex z2 = 2+3*j;
 
     z1 += z2;
 
