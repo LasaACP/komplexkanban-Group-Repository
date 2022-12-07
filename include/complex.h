@@ -386,6 +386,15 @@ class complex {
      */
     friend complex pow(double b, const complex exp);
 
+    /**
+     * Takes two arguments: pow(b, exp). It raises b to the power of exp.
+     * @param b the complex base of the exponential function
+	 * @param exp the integer exponent that b is raised to
+     * @return the EXPth power of b
+     * @author Sameer Agrawal
+     */
+    friend complex pow(const complex b, int exp)
+
 	/**
      * Takes two arguments: pow(b, exp). It raises b to the power of exp.
      * @param b the base of the exponential function
