@@ -70,5 +70,67 @@ TEST_CASE("Division", "[Complex]")
   REQUIRE(complex(20,-4) / complex(3,2) == complex(4,-4));
   REQUIRE(complex(1,2) / 2 == complex(0.5,1));
 }
+
+TEST_CASE("Real", "[Complex]")
+{
+  cout << "Running tests on real" << endl;
+  complex c = complex(20,1);
+  REQUIRE(c.real(c) == 20);
+}
+
+TEST_CASE("Imag", "[Complex]")
+{
+  cout << "Running tests on imag" << endl;
+  complex c = complex(20,1);
+  REQUIRE(c.imag(c) == 1);
+}
+
+TEST_CASE("Conj", "[Complex]")
+{
+  cout << "Running tests on conj" << endl;
+  complex c = complex(20,1);
+  REQUIRE((c.conj(c)).imag(c) == -1 && (c.conj(c)).real(c) == 20);
+}
+
+TEST_CASE("==", "[Complex]")
+{
+  cout << "Running tests on ==" << endl;
+  complex c = complex(20,1);
+  complex d = complex(20,1);
+  complex e = complex(19,0);
+  double f = 19;
+  REQUIRE((c==d));
+  REQUIRE(!(c==e));
+  REQUIRE(e==f);
+  REQUIRE(f==e);
+}
+
+TEST_CASE("!=", "[Complex]")
+{
+  cout << "Running tests on !=" << endl;
+  complex c = complex(20,1);
+  complex d = complex(20,1);
+  complex e = complex(19,0);
+  double f = 18;
+  REQUIRE((c!=e));
+  REQUIRE(!(c!=d));
+  REQUIRE(e!=f);
+  REQUIRE(f!=e);
+}
+
+TEST_CASE("Pow", "[Complex]")
+{
+  complex c = complex(3,4);
+  complex exponent = complex(2,4);
+  complex answer = complex(-7,24);
+  complex answer2 = complex(-7.4614966,2.8854927);
+  complex answer3 = complex(10.7973867,27.3083775);
+  complex answer4 = complex(-0.2599533,0.5545326);
+  REQUIRE(pow(c,2)==answer);
+  REQUIRE(pow(2,c)==answer2);
+  REQUIRE(pow(c,2.1)==answer3);
+  REQUIRE(pow(c,exponent)==answer4);
+}
+
 // */
 #endif  //ifndef CATCH_AMALGAMATED_CUSTOM_MAIN
