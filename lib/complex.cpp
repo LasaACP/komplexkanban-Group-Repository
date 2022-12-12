@@ -151,8 +151,9 @@ complex complex::operator- () {
   return *output;
 }
 
-ostream& operator<< (ostream& ostr, complex output){
-   ostr << "(";
+
+ostream& operator<< (ostream& ostr, const complex& output){
+   ostr << "";
    ostr << output.re;
    ostr << ", ";
    ostr << output.im;
@@ -160,7 +161,8 @@ ostream& operator<< (ostream& ostr, complex output){
    return ostr;
 }
 
-istream& operator>> (istream& istr, complex input) {
+
+istream& operator>> (istream& istr, complex& input) {
   string test = "";
   istr >> test;
   int stop = test.find(",");
@@ -185,6 +187,7 @@ istream& operator>> (istream& istr, complex input) {
     input = out;
     return istr;
   }
+    // if <2 numbers input
   else {
     string real = "";
     for (int z = 0; z < test.length(); z++) {
