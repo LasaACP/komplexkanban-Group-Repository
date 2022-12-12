@@ -11,6 +11,7 @@
 #include <iostream>
 #include "catch_amalgamated.hpp"
 #include "../src/fac.h"
+#include "../include/complex.h"
 using namespace std;
 
 #ifdef CATCH_AMALGAMATED_CUSTOM_MAIN
@@ -30,6 +31,7 @@ int main( int argc, char* argv[] ) {
 
 TEST_CASE("Quick Catch2 test on Factorial", "[Factorial]")
 {
+
   cout << "Hello Catch2 Build with Catch2 main()\n";
   cout << "Running tests on Factorial" << endl;
   REQUIRE(Factorial(1) == 1);
