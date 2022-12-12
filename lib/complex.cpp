@@ -163,6 +163,8 @@ ostream& operator<< (ostream& ostr, const complex& output){
 
 
 istream& operator>> (istream& istr, complex& input) {
+  // desired input format: "(x , y)" or "(x)" or "x" or " "
+  // input = x + yi (if no x and/or y: that part of # = 0)
   string test = "";
   istr >> test;
   int stop = test.find(",");
@@ -170,40 +172,42 @@ istream& operator>> (istream& istr, complex& input) {
     // get first number (real) as str
     string first = "";
     for (int i = 0; i < stop; i++) {
-      if (isdigit(test[i]) || test[i] == '.') {
+      if (isdigit(test[i]) || test[i] == '.'|| test[i] == '-') {
         first += test[i];
       }
     }
     //get second number (imaginary) as str
     string second = "";
     for (int x = stop; x < test.length(); x++) {
-      if (isdigit(test[x]) || test[x] == '.') {
+      if (isdigit(test[x]) || test[x] == '.'|| test[x] == '-') {
         second += test[x];
       }
     }
     double real = stod(first);
     double imag = stod(second);
-    complex out (real, imag);
-    input = out;
+    input.re = real;
+    input.im = imag;
     return istr;
   }
-    // if <2 numbers input
+    // if <2 numbers input:
   else {
+    // if 1 number input, complex set to number + 0i
     string real = "";
     for (int z = 0; z < test.length(); z++) {
-      if (isdigit(test[z]) || test[z] == '.') {
+      if (isdigit(test[z]) || test[z] == '.' || test[z] == '-') {
         real += test[z];
       }
     }
     if (real != "") {
       double real_doub = stod(real);
-      complex out (real_doub, 0);
-      input = out;
+      input.re = real_doub;
+      input.im = 0;
       return istr;
     }
     else {
-      complex out (0, 0);
-      input = out;
+      // if no numbers found in input, complex set to 0 +0i
+      input.re = 0;
+      input.im = 0;
       return istr;
     }
   }
