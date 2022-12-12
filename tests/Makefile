@@ -5,7 +5,7 @@ all: clean main
 CXX = clang++
 override CXXFLAGS += -g -Wno-everything
 
-SRCS := ../lib/complex.cpp
+SRCS := ../lib
 TESTS := main.cpp
 
 main: $(TESTS) $(HEADERS) catch_amalgamated
@@ -18,4 +18,4 @@ catch_amalgamated: catch_amalgamated.cpp catch_amalgamated.hpp
 	$(CXX) $(CXXFLAGS) -O0 -c catch_amalgamated.cpp -o "$@"
 
 clean:
-rm -f main main-debug
+	rm -f main main-debug
