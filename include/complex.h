@@ -197,7 +197,7 @@ class complex {
     /**
      * Checks for inequality between two complex numbers
      * @param c the complex number to compare
-     * @return the equality of the numbers as a boolean
+     * @return the inequality of the numbers as a boolean
      * @author Sameer Agrawal
      */
     bool operator!=(complex c);
@@ -205,7 +205,7 @@ class complex {
     /**
      * Checks for inequality between a complex number and a real number
      * @param r the real number to compare
-     * @return the equality of the numbers as a boolean
+     * @return the inequality of the numbers as a boolean
      * @author Sameer Agrawal
      */
     bool operator!=(double r);
@@ -214,7 +214,7 @@ class complex {
      * Checks for inequality between a real number and a complex number
      * @param r the real number to compare
      * @param c the complex number to compare
-     * @return the equality of the numbers as a boolean
+     * @return the inequality of the numbers as a boolean
      * @author Sameer Agrawal
      */
     friend bool operator!=(double r, complex c);
@@ -237,7 +237,7 @@ class complex {
      * @author Lance Moczygemba
      */
     
-    friend ostream& operator<<(istream& out, complex c);
+    friend ostream& operator<<(ostream& out, complex c);
 
     /**
      * Extracts data from a complex number in the form "(double real, double imag)" and stores result in an output stream
@@ -286,7 +286,7 @@ class complex {
      * @return The complex number's conjugate
      * @author Sameer Agrawal
      */
-    complex conj(const complex);
+    complex conj(const complex c);
     
 	/**
      * Returns the square of the magnitude of its argument.
@@ -393,7 +393,7 @@ class complex {
      * @return the EXPth power of b
      * @author Sameer Agrawal
      */
-    friend complex pow(const complex b, int exp)
+    friend complex pow(const complex b, int exp);
 
 	/**
      * Takes two arguments: pow(b, exp). It raises b to the power of exp.
