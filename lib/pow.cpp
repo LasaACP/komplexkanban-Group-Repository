@@ -25,13 +25,13 @@ complex pow(const complex b, double exp) {
     return result;
 }
 
-complex pow(complex b, complex exp) {
+complex pow(complex b, complex expo) {
     double r = abs(b);
     double theta = arg(b);
     complex result = complex();
     complex exponent = complex();
     complex i = complex(0,1);
-    exponent = (log(r)*exp)+((i*theta)*exp);
+    exponent = (log(r)*expo)+((i*theta)*expo);
     result = exp(exponent);
     return result;
 }

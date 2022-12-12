@@ -4,10 +4,10 @@
 #define PI 3.1415926538979323846
 #define EULER 2.71828182845904523536
 
-complex complex::log(const complex){
+complex log(const complex com){
   complex output;
-  output.re=log(re);
-  output.im=arg(*this)+2*PI*abs(*this);
+  output.re=log(com.re);
+  output.im=arg(com)+2*PI*abs(com);
   return output;
 }
 

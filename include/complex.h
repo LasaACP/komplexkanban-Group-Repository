@@ -226,7 +226,7 @@ class complex {
      * @return the input stream used
      * @author Lance Moczygemba
      */
-    friend istream& operator>>(istream& in, complex c);
+    friend istream& operator>>(istream&, complex&);
 
     /**
 
@@ -237,7 +237,7 @@ class complex {
      * @author Lance Moczygemba
      */
     
-    friend ostream& operator<<(istream& out, complex c);
+    friend ostream& operator<<(ostream&, complex&);
 
     /**
      * Extracts data from a complex number in the form "(double real, double imag)" and stores result in an output stream
@@ -393,7 +393,7 @@ class complex {
      * @return the EXPth power of b
      * @author Sameer Agrawal
      */
-    friend complex pow(const complex b, int exp)
+    friend complex pow(const complex b, int exp);
 
 	/**
      * Takes two arguments: pow(b, exp). It raises b to the power of exp.
