@@ -87,7 +87,7 @@ complex complex::operator- (complex c) {
 
 complex complex::operator* (complex c) {
   complex output = complex();
-  output.re = re*c.re + im*c.im * -1;
+  output.re = re*c.re - im*c.im;
   output.im = re*c.im + im + c.re;
   return output;
 }
@@ -151,6 +151,7 @@ complex complex::operator- () {
   return *output;
 }
 
+
 ostream& operator<< (ostream& ostr, const complex& output){
    ostr << "";
    ostr << output.re;
@@ -159,6 +160,7 @@ ostream& operator<< (ostream& ostr, const complex& output){
    ostr << ")";
    return ostr;
 }
+
 
 istream& operator>> (istream& istr, complex& input) {
   string test = "";
@@ -189,7 +191,7 @@ istream& operator>> (istream& istr, complex& input) {
   else {
     string real = "";
     for (int z = 0; z < test.length(); z++) {
-      if (isdigit(test[z]) || test[x] == '.') {
+      if (isdigit(test[z]) || test[z] == '.') {
         real += test[z];
       }
     }
