@@ -173,7 +173,7 @@ class complex {
      * Checks for equality between two complex numbers
      * @param c the complex number to compare
      * @return the equality of the numbers as a boolean
-     * @author Max Vale
+     * @author Sameer Agrawal
      */
     bool operator==(complex c);
 
@@ -181,7 +181,7 @@ class complex {
      * Checks for equality between a complex number and a real number
      * @param r the real number to compare
      * @return the equality of the numbers as a boolean
-     * @author Max Vale
+     * @author Sameer Agrawal
      */
     bool operator==(double r);
 
@@ -190,9 +190,34 @@ class complex {
      * @param r the real number to compare
      * @param c the complex number to compare
      * @return the equality of the numbers as a boolean
-     * @author Max Vale
+     * @author Sameer Agrawal
      */
     friend bool operator==(double r, complex c);
+
+    /**
+     * Checks for inequality between two complex numbers
+     * @param c the complex number to compare
+     * @return the inequality of the numbers as a boolean
+     * @author Sameer Agrawal
+     */
+    bool operator!=(complex c);
+
+    /**
+     * Checks for inequality between a complex number and a real number
+     * @param r the real number to compare
+     * @return the inequality of the numbers as a boolean
+     * @author Sameer Agrawal
+     */
+    bool operator!=(double r);
+
+    /**
+     * Checks for inequality between a real number and a complex number
+     * @param r the real number to compare
+     * @param c the complex number to compare
+     * @return the inequality of the numbers as a boolean
+     * @author Sameer Agrawal
+     */
+    friend bool operator!=(double r, complex c);
 
     /**
      * Extracts data from an input stream, where the data is of the form "(double real, double imag)" and stores result in a complex number.
@@ -230,28 +255,28 @@ class complex {
      * Returns the absolute value (sqrt(a^2+b^2)) of com
      * @param com the complex number to find the absolute value of
      * @return the absolute value of com
-     * @author ____________
+     * @author Sameer Agrawal
      */
     friend double abs(const complex);
 	/**
      * Returns the real part of comlpex number
      * @param com The complex number to find the real part of
      * @return complex.real
-     * @author ___________
+     * @author Sameer Agrawal
      */
     double real(const complex);
     /**
      * Returns the imaginary part of complex number
      * @param com The complex number to find the real part of
      * @return complex.imaginary
-     * @author _________
+     * @author Sameer Agrawal
      */
     double imag(const complex);
 	/**
      * Returns the angle of a complex number.
      * @param com The complex number to find the angle of
      * @return The complex number's angle
-     * @author _________
+     * @author Jai Nagaraj
      */
     friend double arg(const complex);
 
@@ -259,7 +284,7 @@ class complex {
      * Returns the complex conjugate of its argument.
      * @param com The complex number to find the conjugate of
      * @return The complex number's conjugate
-     * @author _________
+     * @author Sameer Agrawal
      */
     complex conj(const complex);
     
@@ -269,7 +294,7 @@ class complex {
 		comparing magnitudes.
      * @param com The complex number to find the squared magnitude of
      * @return The complex number's squared magnitude
-     * @author _________
+     * @author Max Vale
      */
     friend double norm(const complex);
 
@@ -280,7 +305,7 @@ class complex {
      *  @param mag The magnitude of the complex number
 	 *  @param ang The angle of the complex number
      *  @return The complex number with the specified magnitude and angle
-     *  @author _________
+     *  @author Jai Nagaraj
      */
     friend complex polar(double mag, double ang);
 
@@ -291,7 +316,7 @@ class complex {
      * Returns the angle whose cosine is its argument.
      * @param com the complex number to be used in arccosine
      * @return the arccossine of the complex number
-     * @author ____________
+     * @author Jai Nagaraj
      */
     friend complex acos(const complex);
 
@@ -299,7 +324,7 @@ class complex {
      * Returns the angle whose sine is its argument.
      * @param com the complex number to be used in arcsine
      * @return the arcsine of the complex number
-     * @author ____________
+     * @author Jai Nagaraj
      */
     friend complex asin(const complex);
 
@@ -307,7 +332,7 @@ class complex {
      * Returns the angle whose tangent is its argument.
      * @param com the complex number to be used in arctangent
      * @return the arctangent of the complex number
-     * @author ____________
+     * @author Jai Nagaraj
      */
     friend complex atan(const complex);
 
@@ -315,7 +340,7 @@ class complex {
      * Returns the cosine of the argument.
      * @param com the complex number to be used in cosine
      * @return the cosine of the complex number
-     * @author ____________
+     * @author Jai Nagaraj
      */
     friend complex cos(const complex);
 
@@ -323,7 +348,7 @@ class complex {
      * Returns the hyperbolic cosine of the argument.
      * @param com the complex number to be used in hyperbolic cosine
      * @return the hyperbolic cosine of the complex number
-     * @author ____________
+     * @author Jai Nagaraj
      */
     friend complex cosh(const complex);
 
@@ -332,7 +357,7 @@ class complex {
 	   logarithms, and x is the argument given to exp.
      * @param com the complex number to be used as x
      * @return e to the power of the complex number
-     * @author ____________
+     * @author Max Vale
      */
     friend complex exp(const complex);
 
@@ -340,7 +365,7 @@ class complex {
      * Returns the natural logarithm of its argument.
      * @param com the complex number to be used in log
      * @return the natural logarithm of the complex number
-     * @author ____________
+     * @author Max Vale
      */
     friend complex log(const complex);
 
@@ -348,7 +373,7 @@ class complex {
      * Returns the common logarithm of its argument.
      * @param com the complex number to be used in log base 10
      * @return the common logarithm of the complex number
-     * @author ____________
+     * @author Max Vale
      */
     friend complex log10(const complex);
 
@@ -357,25 +382,25 @@ class complex {
      * @param b the base of the exponential function
 	 * @param exp the exponent that b is raised to
      * @return the EXPth power of b
-     * @author ____________
+     * @author Sameer Agrawal
      */
     friend complex pow(double b, const complex exp);
 
-	/**
+    /**
      * Takes two arguments: pow(b, exp). It raises b to the power of exp.
-     * @param b the base of the exponential function
-	 * @param exp the exponent that b is raised to
+     * @param b the complex base of the exponential function
+	 * @param exp the integer exponent that b is raised to
      * @return the EXPth power of b
-     * @author ____________
+     * @author Sameer Agrawal
      */
-    friend complex pow(const complex b, int exp);
+    friend complex pow(const complex b, int exp)
 
 	/**
      * Takes two arguments: pow(b, exp). It raises b to the power of exp.
      * @param b the base of the exponential function
 	 * @param exp the exponent that b is raised to
      * @return the EXPth power of b
-     * @author ____________
+     * @author Sameer Agrawal
      */
     friend complex pow(const complex b, double exp);
 
@@ -384,7 +409,7 @@ class complex {
      * @param b the base of the exponential function
 	 * @param exp the exponent that b is raised to
      * @return the EXPth power of b
-     * @author ____________
+     * @author Sameer Agrawal
      */
     friend complex pow(const complex b, const complex exp);
 
@@ -392,7 +417,7 @@ class complex {
      * Returns the sine of the argument.
      * @param com the complex number to be used in sine
      * @return the sine of the complex number
-     * @author ____________
+     * @author Jai Nagaraj
      */
     friend complex sin(const complex);
 
@@ -400,7 +425,7 @@ class complex {
      * Returns the hyperbolic sine of the argument.
      * @param com the complex number to be used in hyperbolic sine
      * @return the hyperbolic sine of the complex number
-     * @author ____________
+     * @author Jai Nagaraj
      */
     friend complex sinh(const complex);
 
@@ -408,7 +433,7 @@ class complex {
      * Returns the square root of its argument.
      * @param com the complex number to find the square root of
      * @return the square root of com
-     * @author ____________
+     * @author Max Vale
      */
     friend complex sqrt(const complex);
 
@@ -416,7 +441,7 @@ class complex {
      * Returns the tangent of the argument.
      * @param com the complex number to be used in tangent
      * @return the tangent of the complex number
-     * @author ____________
+     * @author Jai Nagaraj
      */
     friend complex tan(const complex);
 
@@ -424,7 +449,7 @@ class complex {
      * Returns the hyperbolic tangent of the argument.
      * @param com the complex number to be used in hyperbolic tangent
      * @return the hyperbolic tangent of the complex number
-     * @author ____________
+     * @author Jai Nagaraj
      */
     friend complex tanh(const complex);
 
