@@ -183,7 +183,7 @@ istream& operator>> (istream& istr, complex& input) {
     }
     double real = stod(first);
     double imag = stod(second);
-    complex out (real, imag);
+    complex out = complex(real, imag);
     input = out;
     return istr;
   }
