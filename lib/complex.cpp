@@ -82,14 +82,12 @@ complex complex::operator+ (complex c) {
 complex complex::operator- (complex c) {
   complex output = complex();
   output.re = re - c.re;
-  output.im = im;
+  output.im = im - c.im;
   return output;
 }
 
 complex complex::operator* (complex c) {
-  complex output = complex();
-  output.re = re*c.re - im*c.im;
-  output.im = re*c.im + im + c.re;
+  complex output = complex(re*c.re - im*c.im, re*c.im + im*c.re);
   return output;
 }
 
