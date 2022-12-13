@@ -2,10 +2,10 @@ SHELL = /bin/sh
 
 all: clean main
 
-CXX = clang -std=c++17
+CXX = clang++
 override CXXFLAGS += -g -Wno-everything
 
-SRCS := ../lib/*.cpp
+SRCS := ../lib/abs.cpp ../lib/arg.cpp ../lib/complex.cpp ../lib/compoundAssignment.cpp ../lib/cos.cpp ../lib/cosh.cpp ../lib/exp.cpp ../lib/log.cpp ../lib/log10.cpp ../lib/norm.cpp ../lib/polar.cpp ../lib/pow.cpp ../lib/sin.cpp ../lib/sinh.cpp ../lib/sqrt.cpp ../lib/tan.cpp ../lib/tanh.cpp
 TESTS := main.cpp
 
 main: $(TESTS) $(HEADERS) catch_amalgamated
