@@ -176,7 +176,7 @@ TEST_CASE("Hyperbolic Tangent", "[Complex]")
   REQUIRE((tanh(complex(1,2)) == complex(1.16673626,-0.2434582)) == true);
 }
 
-/*EST_CASE("Inverse Sine", "[Complex]")
+TEST_CASE("Inverse Sine", "[Complex]")
 {
   cout << "Running tests on inverse sine:" << endl;
   REQUIRE((asin(complex(1,2)) == complex(0.42707859,1.52857092)) == true);
@@ -192,7 +192,7 @@ TEST_CASE("Inverse Tangent", "[Complex]")
 {
   cout << "Running tests on inverse tangent:" << endl;
   REQUIRE((atan(complex(1,2)) == complex(1.33897252,0.40235948)) == true);
-}*/
+}
 
 // */
 #endif  //ifndef CATCH_AMALGAMATED_CUSTOM_MAIN
