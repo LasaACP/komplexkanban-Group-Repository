@@ -132,7 +132,7 @@ TEST_CASE("Pow", "[Complex]")
   complex exponent = complex(2,4);
   complex answer = complex(-7,24);
   complex answer2 = complex(-7.4614966,2.8854927);
-  complex answer3 = complex(10.7973867,27.3083775);
+  complex answer3 = complex(-10.7973867,27.3083775);
   complex answer4 = complex(-0.2599533,0.5545326);
   REQUIRE((pow(c,2)==answer) == true);
   REQUIRE((pow(2,c)==answer2) == true);
