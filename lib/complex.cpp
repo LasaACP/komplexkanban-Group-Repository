@@ -152,7 +152,7 @@ complex complex::operator- () {
 }
 
 
-ostream& operator<< (ostream& ostr, const complex& output){
+ostream& operator<< (ostream& ostr, complex output){
    ostr << "";
    ostr << output.re;
    ostr << ", ";

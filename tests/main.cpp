@@ -10,8 +10,9 @@
 //#define CATCH_AMALGAMATED_CUSTOM_MAIN
 #include <iostream>
 #include "catch_amalgamated.hpp"
-#include "../src/fac.h"
 #include "../include/complex.h"
+#include "../src/fac.h"
+
 using namespace std;
 
 #ifdef CATCH_AMALGAMATED_CUSTOM_MAIN
@@ -43,32 +44,32 @@ TEST_CASE("Quick Catch2 test on Factorial", "[Factorial]")
 TEST_CASE("Addition", "[Complex]")
 {
   cout << "Running tests on addition:" << endl;
-  REQUIRE(complex(1,2) + complex(4,5) == complex(5,7));
-  REQUIRE(complex(1,2) + 2 == complex(3,2));
-  REQUIRE(complex(1,2) + complex(0,0) == complex(1,2));
+  REQUIRE(((complex(1,2) + complex(4,5)) == complex(5,7)) == true);
+  REQUIRE((complex(1,2) + 2 == complex(3,2))==true);
+  REQUIRE((complex(1,2) + complex(0,0) == complex(1,2)) == true);
 }
 
 TEST_CASE("Subtraction", "[Complex]")
 {
   cout << "Running tests on subtraction" << endl;
-  REQUIRE(complex(1,2) - complex(4,5) == complex(-3,-3));
-  REQUIRE(complex(1,2) - 2 == complex(-1,2));
-  REQUIRE(complex(1,2) - complex(0,0) == complex(1,2));
+  REQUIRE((complex(1,2) - complex(4,5) == complex(-3,-3))==true);
+  REQUIRE((complex(1,2) - 2 == complex(-1,2))==true);
+  REQUIRE((complex(1,2) - complex(0,0) == complex(1,2))==true);
 }
 
 TEST_CASE("Multiplication", "[Complex]")
 {
   cout << "Running tests on multiplication" << endl;
-  REQUIRE(complex(1,2) * complex(4,5) == complex(-6,13));
-  REQUIRE(complex(1,2) * 2 == complex(2,4));
-  REQUIRE(complex(1,2) * complex(0,0) == complex(0,0));
+  REQUIRE((complex(1,2) * complex(4,5) == complex(-6,13)) ==true);
+  REQUIRE((complex(1,2) * 2 == complex(2,4)) ==true);
+  REQUIRE((complex(1,2) * complex(0,0) == complex(0,0)) ==true);
 }
 
 TEST_CASE("Division", "[Complex]")
 {
   cout << "Running tests on division" << endl;
-  REQUIRE(complex(20,-4) / complex(3,2) == complex(4,-4));
-  REQUIRE(complex(1,2) / 2 == complex(0.5,1));
+  REQUIRE((complex(20,-4) / complex(3,2) == complex(4,-4)) ==true);
+  REQUIRE((complex(1,2) / 2 == complex(0.5,1)) ==true);
 }
 
 TEST_CASE("Real", "[Complex]")
@@ -89,7 +90,8 @@ TEST_CASE("Conj", "[Complex]")
 {
   cout << "Running tests on conj" << endl;
   complex c = complex(20,1);
-  REQUIRE((c.conj(c)).imag(c) == -1 && (c.conj(c)).real(c) == 20);
+  complex answer = complex(20,-1);
+  REQUIRE((c.conj(c)==answer) ==true);
 }
 
 TEST_CASE("==", "[Complex]")
@@ -99,10 +101,10 @@ TEST_CASE("==", "[Complex]")
   complex d = complex(20,1);
   complex e = complex(19,0);
   double f = 19;
-  REQUIRE((c==d));
-  REQUIRE(!(c==e));
-  REQUIRE(e==f);
-  REQUIRE(f==e);
+  REQUIRE(((c==d)) ==true);
+  REQUIRE((!(c==e)) ==true);
+  REQUIRE((e==f) ==true);
+  REQUIRE((f==e) ==true);
 }
 
 TEST_CASE("!=", "[Complex]")
@@ -112,24 +114,25 @@ TEST_CASE("!=", "[Complex]")
   complex d = complex(20,1);
   complex e = complex(19,0);
   double f = 18;
-  REQUIRE((c!=e));
-  REQUIRE(!(c!=d));
-  REQUIRE(e!=f);
-  REQUIRE(f!=e);
+  REQUIRE(((c!=e)) ==true);
+  REQUIRE((!(c!=d)) ==true);
+  REQUIRE((e!=f) ==true);
+  REQUIRE((f!=e) ==true);
 }
 
 TEST_CASE("Pow", "[Complex]")
 {
+  cout << "Running tests on Pow" << endl;
   complex c = complex(3,4);
   complex exponent = complex(2,4);
   complex answer = complex(-7,24);
   complex answer2 = complex(-7.4614966,2.8854927);
   complex answer3 = complex(10.7973867,27.3083775);
   complex answer4 = complex(-0.2599533,0.5545326);
-  REQUIRE(pow(c,2)==answer);
-  REQUIRE(pow(2,c)==answer2);
-  REQUIRE(pow(c,2.1)==answer3);
-  REQUIRE(pow(c,exponent)==answer4);
+  REQUIRE((pow(c,2)==answer) ==true);
+  REQUIRE((pow(2,c)==answer2) ==true);
+  REQUIRE((pow(c,2.1)==answer3) ==true);
+  REQUIRE((pow(c,exponent)==answer4) ==true);
 }
 
 // */
