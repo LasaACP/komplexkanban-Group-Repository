@@ -176,7 +176,7 @@ istream& operator>> (istream& istr, complex& input) {
     //get second number (imaginary) as str
     string second = "";
     for (int x = stop; x < test.length(); x++) {
-      if (isdigit(test[x]) || test[x] == '.') {
+      if (isdigit(test[x]) || test[x] == '.' || test[x]. == '-') {
         second += test[x];
       }
     }
@@ -190,7 +190,7 @@ istream& operator>> (istream& istr, complex& input) {
   else {
     string real = "";
     for (int z = 0; z < test.length(); z++) {
-      if (isdigit(test[z]) || test[z] == '.') {
+      if (isdigit(test[z]) || test[z] == '.' || test[z] == '-') {
         real += test[z];
       }
     }
