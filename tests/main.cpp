@@ -8,30 +8,38 @@
 
 //#define CATCH_CONFIG_RUNNER
 //#define CATCH_AMALGAMATED_CUSTOM_MAIN
+#define PI 3.1415926535897932384626433832795028841971
 #include <iostream>
 #include "catch_amalgamated.hpp"
 #include "../include/complex.h"
 #include "../lib/abs.cpp"
+#include "../lib/acos.cpp"
 #include "../lib/arg.cpp"
+#include "../lib/asin.cpp"
+#include "../lib/atan.cpp"
 #include "../lib/complex.cpp"
 #include "../lib/compoundAssignment.cpp"
+#include "../lib/conj.cpp"
 #include "../lib/cos.cpp"
 #include "../lib/cosh.cpp"
 #include "../lib/exp.cpp"
+#include "../lib/imag.cpp"
 #include "../lib/log.cpp"
 #include "../lib/log10.cpp"
 #include "../lib/norm.cpp"
+#include "../lib/operators.cpp"
 #include "../lib/polar.cpp"
 #include "../lib/pow.cpp"
+#include "../lib/real.cpp"
 #include "../lib/sin.cpp"
 #include "../lib/sinh.cpp"
 #include "../lib/sqrt.cpp"
 #include "../lib/tan.cpp"
 #include "../lib/tanh.cpp"
 
-using namespace std;
-
 #ifdef CATCH_AMALGAMATED_CUSTOM_MAIN
+
+using namespace std;
 
 int main( int argc, char* argv[] ) {
   // global setup...
@@ -194,5 +202,40 @@ TEST_CASE("Inverse Tangent", "[Complex]")
   REQUIRE((atan(complex(1,2)) == complex(1.33897252,0.40235948)) == true);
 }
 
+TEST_CASE("Sqrt", "[Complex]")
+{
+  cout << "Running tests on sqrt:" << endl;
+  REQUIRE((sqrt(complex(3,4)) == complex(2,1)) == true);
+}
+
+TEST_CASE("Log", "[Complex]")
+{
+  cout << "Running tests on log:" << endl;
+  REQUIRE((log(complex(3,4)) == complex(1.60943791,0.927295218)) == true);
+}
+
+TEST_CASE("Log10", "[Complex]")
+{
+  cout << "Running tests on log10:" << endl;
+  REQUIRE((log10(complex(3,4)) == complex(0.698970004,0.402719196)) == true);
+}
+
+TEST_CASE("Arg", "[Complex]")
+{
+  cout << "Running tests on arg:" << endl;
+  REQUIRE((complex(arg(complex(3,4))) == complex(0.92729522)) == true);
+}
+
+TEST_CASE("Norm", "[Complex]")
+{
+  cout << "Running tests on norm:" << endl;
+   REQUIRE((complex(norm(complex(1,2))) == complex(5)) == true);
+}
+
+TEST_CASE("Polar", "[Complex]")
+{
+  cout << "Running tests on polar:" << endl;
+   REQUIRE((complex(polar(10, PI)) == complex(-10,0)) == true);
+}
 // */
 #endif  //ifndef CATCH_AMALGAMATED_CUSTOM_MAIN

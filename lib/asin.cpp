@@ -6,5 +6,5 @@
 complex asin(complex com)
 {
     complex i = complex(0,1);
-    return 1/i * log(i*com  + sqrt(1-pow(com,2)));
+    return -i * (log((i*com)  + sqrt(1-pow(com,2))));
 }

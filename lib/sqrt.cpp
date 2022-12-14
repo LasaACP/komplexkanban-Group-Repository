@@ -5,8 +5,6 @@
 #define EULER 2.71828182845904523536
 
 complex sqrt(const complex c){
-  complex output;
-  output.re=sqrt( (abs(c)+c.re) / 2 );
-  output.im=(c.im/abs(c.im)) * sqrt( (abs(c) - c.im) / 2);
+  complex output = pow(c,0.5);
   return output;
 }

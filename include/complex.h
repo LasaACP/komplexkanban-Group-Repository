@@ -24,7 +24,7 @@ class complex {
 
 		//----------------------------------------- CONSTRUCTORS -----------------------------------------------------
 		complex();
-		complex(double real, double imaginary);
+		complex(double real, double imaginary=0.0);
 
     //----------------------------------------- OPERATOR OVERLOADS -----------------------------------------------------
 	/**
