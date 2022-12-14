@@ -8,8 +8,6 @@
 
 int main () {
     std::cout << "Hello World" << std::endl;
-
-    std::cout << "Factorial test " << Factorial(5) << std::endl;
   
     complex a(5.0,6.0),b;
 
