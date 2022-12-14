@@ -124,6 +124,15 @@ ostream& operator<< (ostream& ostr, complex output){
    return ostr;
 }
 
+ostream& operator<< (ostream& ostr, complex* output){
+   ostr << "(";
+   ostr << output->re;
+   ostr << ", ";
+   ostr << output->im;
+   ostr << ")";
+   return ostr;
+}
+
 
 istream& operator>> (istream& istr, complex& input) {
   string test = "";

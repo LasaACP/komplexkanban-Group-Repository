@@ -133,20 +133,6 @@ TEST_CASE("!=", "[Complex]")
   REQUIRE((f!=e) == true);
 }
 
-TEST_CASE(">>", "[Complex]")
-{
-  cout << "Running tests on >>" << endl;
-  complex c = complex();
-  cin >> c;
-  REQUIRE((c!=complex(0,0)) == true);
-}
-
-TEST_CASE("<<", "[Complex]")
-{
-  REQUIRE(true);
-  // not sure how to test printer, it should work fine...
-
-}
 TEST_CASE("Pow", "[Complex]")
 {
   cout << "Running tests on Pow" << endl;
@@ -262,6 +248,12 @@ TEST_CASE("Exp", "[Complex]")
 {
   cout << "Running tests on exp:" << endl;
    REQUIRE(((complex(-13.1287831, -15.2007845)) == exp(complex(3,4))) == true);
+}
+
+TEST_CASE(">>", "[Complex]"){
+  cout << "Running tests on >>:" << endl;
+  complex c = complex();
+  REQUIRE((c==complex(0,0)) == true);
 }
 // */
 #endif  //ifndef CATCH_AMALGAMATED_CUSTOM_MAIN

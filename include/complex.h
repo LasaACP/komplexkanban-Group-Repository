@@ -226,7 +226,7 @@ class complex {
      * @return the input stream used
      * @author Lance Moczygemba
      */
-    friend istream& operator>>(istream& in, complex c);
+    friend istream& operator>>(istream& in, complex& c);
 
     /**
 
@@ -237,7 +237,7 @@ class complex {
      * @author Lance Moczygemba
      */
     
-    friend ostream& operator<<(ostream& out,   complex c);
+    friend ostream& operator<<(ostream& out, complex c);
 
     /**
      * Extracts data from a complex number in the form "(double real, double imag)" and stores result in an output stream
@@ -246,6 +246,8 @@ class complex {
      * @return the output stream used
      * @author Lance Moczygemba
      */
+
+      friend ostream& operator<< (ostream& ostr, complex* output);
 
   
   
