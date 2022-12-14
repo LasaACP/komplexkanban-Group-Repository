@@ -182,8 +182,8 @@ istream& operator>> (istream& istr, complex& input) {
     }
     double real = stod(first);
     double imag = stod(second);
-    complex out = complex(real, imag);
-    input = out;
+    input.re = real;
+    input.im = imag;
     return istr;
   }
     // if <2 numbers input
@@ -196,13 +196,12 @@ istream& operator>> (istream& istr, complex& input) {
     }
     if (real != "") {
       double real_doub = stod(real);
-      complex out (real_doub, 0);
-      input = out;
+      input.re = real_doub;
       return istr;
     }
     else {
-      complex out (0, 0);
-      input = out;
+      input.re = 0;
+      input.im = 0;
       return istr;
     }
   }
