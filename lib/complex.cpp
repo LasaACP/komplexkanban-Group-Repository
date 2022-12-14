@@ -161,6 +161,7 @@ ostream& operator<< (ostream& ostr, complex output){
 }
 
 
+
 istream& operator>> (istream& istr, complex& input) {
   string test = "";
   istr >> test;
@@ -176,13 +177,13 @@ istream& operator>> (istream& istr, complex& input) {
     //get second number (imaginary) as str
     string second = "";
     for (int x = stop; x < test.length(); x++) {
-      if (isdigit(test[x]) || test[x] == '.' || test[x]. == '-') {
+      if (isdigit(test[x]) || test[x] == '.') {
         second += test[x];
       }
     }
     double real = stod(first);
     double imag = stod(second);
-    complex out (first, second);
+    complex out = complex(real, imag);
     input = out;
     return istr;
   }
@@ -190,7 +191,7 @@ istream& operator>> (istream& istr, complex& input) {
   else {
     string real = "";
     for (int z = 0; z < test.length(); z++) {
-      if (isdigit(test[z]) || test[z] == '.' || test[z] == '-') {
+      if (isdigit(test[z]) || test[z] == '.') {
         real += test[z];
       }
     }
