@@ -41,8 +41,6 @@ int main () {
     cout << "The natural log is: " << log(z1) << "\n";
     cout << "The sin is: " << sin(z1) << "\n";
 
-    /* other function testing */
-    /*
     cout << "\n------ OTHER FUNCTION TESTING ------\n\n";
     cout << "The real part is: " << real(a) << "\n";
     cout << "The imaginary part is: " << imag(a) << "\n";
@@ -62,7 +60,7 @@ int main () {
     cout << "The asin is: " << asin(a) << "\n";
     cout << "The acos is: " << acos(a) << "\n";
     cout << "The atan is: " << atan(a) << "\n";
-    cout << "The acsc is: " << acsc(a) << "\n";
+    /*cout << "The acsc is: " << acsc(a) << "\n";
     cout << "The asec is: " << asec(a) << "\n";
     cout << "The acot is: " << acot(a) << "\n\n";
 
