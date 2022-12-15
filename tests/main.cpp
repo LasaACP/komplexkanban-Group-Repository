@@ -253,7 +253,9 @@ TEST_CASE("Exp", "[Complex]")
 TEST_CASE(">>", "[Complex]"){
   cout << "Running tests on >>:" << endl;
   complex c = complex();
-  REQUIRE((c==complex(0,0)) == true);
+  cout << "Enter a complex number in the form realPart, imaginaryPart (please don't enter 0,0): ";
+  cin>>c;
+  REQUIRE((c!=complex(0,0)) == true);
 }
 // */
 #endif  //ifndef CATCH_AMALGAMATED_CUSTOM_MAIN
